@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx wrangler d1 execute bookstore-db --local --command \"DROP TABLE books_fts;\")",
+      "Bash(npx wrangler d1 execute bookstore-db --local --command \"CREATE VIRTUAL TABLE books_fts USING fts5(book_id UNINDEXED, title, author, description, vibe_tags);\")",
+      "Bash(npx wrangler d1 execute bookstore-db --local --command \"INSERT INTO books_fts(rowid, book_id, title, author, description, vibe_tags) SELECT rowid, id, title, author, description, vibe_tags FROM books;\")",
+      "Bash(curl http://localhost:8787/api/books)",
+      "Bash(curl \"http://localhost:8787/api/search?q=moonstone\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

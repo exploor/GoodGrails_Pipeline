@@ -1,0 +1,21 @@
+{
+  "name": "bookstore-api",
+  "version": "1.0.0",
+  "description": "AI-powered charitable bookstore on Cloudflare Workers",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@cloudflare/workers-types": "^4.20241022.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.6.3",
+    "wrangler": "^3.80.0",
+    "vitest": "^1.0.0"
+  }
+}
